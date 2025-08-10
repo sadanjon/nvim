@@ -180,3 +180,4 @@ end
 require("config.setup")
 
 require("lsp.ts_ls")
+require("lsp.luals")
