@@ -53,6 +53,10 @@ vim.opt.ttimeoutlen = 0                               -- Key code timeout
 vim.opt.autoread    = true                            -- Auto reload files changed outside vim
 vim.opt.autowrite   = false                           -- Don't auto save
 
+-- File exploring
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
 -- Behavior settings
 vim.opt.hidden                          = true               -- Allow hidden buffers
 vim.opt.errorbells                      = false              -- No error bells
@@ -117,8 +121,9 @@ vim.keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv", { desc = "Move selection up" })
 vim.keymap.set("v", "<", "<gv", { desc = "Indent left and reselect" })
 vim.keymap.set("v", ">", ">gv", { desc = "Indent right and reselect" })
 
--- Quick file navigation
-vim.keymap.set("n", "<leader>e", ":Lexplore<CR>", { desc = "Open file explorer" })
+-- File exploring
+vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>", { desc = "Open file explorer" })
+vim.keymap.set("n", "<leader>re", ":NvimTreeFindFile<CR>", { desc = "Reveal file in explorer" })
 vim.keymap.set("n", "<leader>ff", ":find ", { desc = "Find file" })
 
 -- Better J behavior
